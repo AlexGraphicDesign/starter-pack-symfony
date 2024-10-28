@@ -25,7 +25,7 @@ composer-u: ## Update Composer dependencies
 	docker-compose exec --user www-data php bash -c 'composer update'
 
 download-symfony: ## Download Symfony
-	docker-compose exec --user www-data php bash -c 'mkdir symfony-temp && composer create-project symfony/skeleton:"7.0.*" symfony-temp && mv symfony-temp/* . && rm -rf symfony-temp'
+	docker-compose exec --user www-data php bash -c 'mkdir symfony-temp && composer create-project symfony/skeleton:"7.1.*" symfony-temp && mv symfony-temp/* . && rm -rf symfony-temp'
 
 generate-env:
 	@rm -f .env
