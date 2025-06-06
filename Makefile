@@ -15,7 +15,7 @@ node: ## Connect to the Node container
 	docker-compose exec node /bin/bash
 
 cacert:
-	cd source/var/data/ && curl -sS https://curl.se/ca/cacert.pem -o cacert.pem
+	mkdir source/var/data && cd source/var/data/ && curl -sS https://curl.se/ca/cacert.pem -o cacert.pem
 
 init-project: generate-env build download-symfony cacert success-message
 
@@ -43,7 +43,7 @@ db-reset: ## Reset database
 	docker-compose exec --user www-data php bash -c 'php -dxdebug.mode=off bin/console doctrine:migrations:migrate -n'
 
 download-symfony: ## Download Symfony
-	docker-compose exec --user www-data php bash -c 'mkdir symfony-temp && composer create-project symfony/skeleton:"7.1.*" symfony-temp && shopt -s dotglob && mv symfony-temp/* . && shopt -u dotglob && rm -rf symfony-temp'
+	docker-compose exec --user www-data php bash -c 'mkdir symfony-temp && composer create-project symfony/skeleton:"7.3.*" symfony-temp && shopt -s dotglob && mv symfony-temp/* . && shopt -u dotglob && rm -rf symfony-temp'
 
 generate-env:
 	@rm -f .env
