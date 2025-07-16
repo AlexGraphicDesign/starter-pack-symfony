@@ -1,3 +1,3 @@
-FROM node:20-buster
+FROM node:24-buster
 ARG UID=1000
 RUN usermod -u ${UID} node

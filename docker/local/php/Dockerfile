@@ -1,4 +1,4 @@
-FROM php:8.4.1-apache as php-apache
+FROM php:8.4.10-apache as php-apache
 
 #dépendances
 RUN apt-get update && apt-get install -y zip unzip zlib1g-dev libldb-dev libjpeg62-turbo-dev libzip-dev cron sudo libicu-dev g++ libpng-dev autoconf pkg-config libssl-dev libpq-dev libxslt1-dev ghostscript

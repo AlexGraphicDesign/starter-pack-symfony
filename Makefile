@@ -55,7 +55,7 @@ fix: ## Run PHP-CS-Fixer
 success-message: ## Display success message
 	@printf "\n\n"
 	@printf "================\n"
-	@printf "Le site est disponible ici : https://starter-pack.dev.localhost  \n"
+	@printf "Le site est disponible ici : https://starter-pack.app.localhost  \n"
 	@printf "================\n"
 
 help: ## Display this help message
